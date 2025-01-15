@@ -1,10 +1,8 @@
 import pandas as pd
-import numpy as np
 from collections import defaultdict
 import HowToBreakIntoTheFieldSolns as s
 
 
-## How To Break Into the Field
 # Question 1
 def check_description(descrips):
     '''
@@ -22,7 +20,7 @@ def check_description(descrips):
         print("Though you did provide the correct data type, your result does not match what we were expecting.  Try again.\n\n  Your function should return the description for any column name passed to it.")
 
 
-#Question 3
+# Question 3
 def total_count(df, col1, col2, look_for):
     '''
     INPUT:
@@ -35,11 +33,11 @@ def total_count(df, col1, col2, look_for):
     new_df - a dataframe of each look_for with the count of how often it shows up
     '''
     new_df = defaultdict(int)
-    #loop through list of ed types
+    # loop through list of ed types
     for val in look_for:
-        #loop through rows
+        # loop through rows
         for idx in range(df.shape[0]):
-            #if the ed type is in the row add 1
+            # if the ed type is in the row add 1
             if val in df[col1][idx]:
                 new_df[val] += int(df[col2][idx])
     new_df = pd.DataFrame(pd.Series(new_df)).reset_index()
@@ -48,7 +46,7 @@ def total_count(df, col1, col2, look_for):
     return new_df
 
 
-#Question 4
+# Question 4
 def higher_ed_test(higher_ed_perc):
     '''
     INPUT:
@@ -64,7 +62,8 @@ def higher_ed_test(higher_ed_perc):
     else:
         print("That doesn't look quite like expected.  You can get the percentage of 1's in a 1-0 column by using the .mean() method of a pandas series.")
 
-#Question 6
+
+# Question 6
 def conclusions(sol):
     '''
     INPUT:
