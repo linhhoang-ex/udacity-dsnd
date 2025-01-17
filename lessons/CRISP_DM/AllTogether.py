@@ -95,7 +95,7 @@ def find_optimal_lm_mod(X, y, cutoffs, test_size = .30, random_state=42, plot=Tr
         X_train, X_test, y_train, y_test = train_test_split(reduce_X, y, test_size = test_size, random_state=random_state)
 
         #fit the model and obtain pred response
-        lm_model = LinearRegression(normalize=True)
+        lm_model = LinearRegression()
         lm_model.fit(X_train, y_train)
         y_test_preds = lm_model.predict(X_test)
         y_train_preds = lm_model.predict(X_train)
@@ -124,7 +124,7 @@ def find_optimal_lm_mod(X, y, cutoffs, test_size = .30, random_state=42, plot=Tr
     X_train, X_test, y_train, y_test = train_test_split(reduce_X, y, test_size = test_size, random_state=random_state)
 
     #fit the model
-    lm_model = LinearRegression(normalize=True)
+    lm_model = LinearRegression()
     lm_model.fit(X_train, y_train)
 
     return r2_scores_test, r2_scores_train, lm_model, X_train, X_test, y_train, y_test
