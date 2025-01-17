@@ -1,11 +1,6 @@
-import pandas as pd
-import numpy as np
-from collections import defaultdict
 import ImputingValuesSolns as s
 
 
-
-## Imputing Values
 # Question 1 Part 1
 def check_sal_dropped(drop_sal_df):
     '''
